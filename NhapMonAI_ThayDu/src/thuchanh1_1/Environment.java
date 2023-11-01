@@ -67,7 +67,11 @@ public class Environment {
 		System.out.println("Agent Loc.: " + agentLocation + "\tAction: " + anAction);
 
 		if ((es.getLocationState(LOCATION_A) == LocationState.CLEAN)
-				&& (es.getLocationState(LOCATION_B) == LocationState.CLEAN))
+				&& (es.getLocationState(LOCATION_B) == LocationState.CLEAN)
+			    && (es.getLocationState(LOCATION_C) == LocationState.CLEAN)
+				&& (es.getLocationState(LOCATION_D) == LocationState.CLEAN))
+
+
 			isDone = true;// if both squares are clean, then agent do not need to do any action
 		es.display();
 	}
