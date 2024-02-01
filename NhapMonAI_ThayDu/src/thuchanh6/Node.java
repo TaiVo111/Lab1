@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Node {
+public class Node implements Comparable<Node>{
 	public static final int N = 8;
-	private Queen[] state;
+	Queen[] state;
 
 	public Node() {
 		// generateBoard();
@@ -94,10 +94,15 @@ public class Node {
 		}
 		return current;
 	}
+	
 
 	public Node selectNextRandomCandidate() {
-
-		return null;
+			Random random = new Random();
+			int index = random.nextInt(N);
+			Node result = new Node();
+			result.state[index].setRow(random.nextInt(N));
+			return result;
+		
 	}
 
 	public void displayBoard() {
@@ -117,5 +122,11 @@ public class Node {
 			}
 			System.out.println();
 		}
+	}
+
+	@Override
+	public int compareTo(Node o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
